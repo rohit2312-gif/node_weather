@@ -1,0 +1,35 @@
+
+body{
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+
+    min-height: 100vh;
+    max-width: 650px;
+}
+
+
+ footer{
+
+    color:  #888888;
+    border-top: 1px solid white;
+    margin-top: 16px;
+    padding: 20px;
+ }
+header a{
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.s{
+
+    flex: 40px;
+}
+h1{
+    font-size: 30;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
