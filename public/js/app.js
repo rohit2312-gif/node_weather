@@ -1,5 +1,5 @@
 
-alert("client side js is loaded"),
+//alert("client side js is loaded"),
 
 
  fetcher=(address,callback)=>{
@@ -17,14 +17,14 @@ alert("client side js is loaded"),
 
 const weatherForm= document.querySelector('form')
 const search=document.querySelector('input')
-const outpu1=document.querySelector('#message-one')
-const outpu2=document.querySelector('#message-two')
-
+const output1=document.querySelector('#message-one')
+const output2=document.querySelector('#message-two')
+const output3=document.querySelector("#message-three");
 weatherForm.addEventListener('submit',(e)=> {
 
 
     e.preventDefault()
-        outpu1.textContent='Loading'
+        output1.textContent='Loading...'
     const location=search.value
 console.log(location)
 // const data=fetcher(location,(data)=>{
@@ -38,11 +38,16 @@ fetch('/weather?address='+location).then((response)=>{
 
     response.json().then((data)=>{
                          if(data.error)
-                         outpu1.textContent="Error try again"
+                         output1.textContent="Error try again",
+                         output2.textContent=''
                          //console.log("ERROR")
                          else{
-                             outpu1.textContent=data.forecast,
-                             outpu2.textContent=data.address
+
+                            console.log(data.time);
+                            output1.textContent=data.forecast,
+                             output2.textContent=data.address,
+                            output3.textContent=data.time
+                            
                          }
                          //console.log(data)
 

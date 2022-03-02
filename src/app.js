@@ -57,10 +57,12 @@ app.get('/weather', (req, res) => {
                         console.log(location),
                 forecast(longitude,latitude,(err,forecastdata)=>{
                     if(!err){
+                        console.log(forecastdata.current.observation_time);
                     res.send({
                         forecast:"weather currently is "+forecastdata.current.weather_descriptions[0]+" feels like "+forecastdata.current.feelslike+" degrees",
                         country: forecastdata.location.country,
                         address: req.query.address,
+                        time: forecastdata.current.observation_time
                     })  
                 }
                 else{
