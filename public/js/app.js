@@ -1,5 +1,5 @@
 
-//alert("client side js is loaded"),
+alert("Padhle aafa teri maa ki choot"),
 
 
  fetcher=(address,callback)=>{
